@@ -3,8 +3,7 @@ class TowersOfHanoi
   attr_accessor :towers 
   
   def initialize
-    @towers = Array.new(3) {Array.new(3)}
-    @towers[0] = [1, 2, 3]
+    @towers = [[1, 2, 3], [], []]
   end
   
   def move(inputs)
@@ -31,4 +30,10 @@ class TowersOfHanoi
     end
     false
   end 
+  
+  def won?
+    towers[1,2].any? {|tower| tower == [1,2,3]}
+  end
+  
+  
 end
